@@ -43,6 +43,12 @@ public class ClubController {
         return "clubs-create";
     }
 
+    @GetMapping("/clubs/{clubId}/delete")
+    public String deleteClub(@PathVariable("clubId") Long clubId) {
+        clubService.delete(clubId);
+        return "redirect:/clubs";
+    }
+
     @PostMapping("/clubs/new")
     public String saveClub(@Valid @ModelAttribute("club") ClubDTO clubDTO,BindingResult result, Model model) {
         if (result.hasErrors()) {
