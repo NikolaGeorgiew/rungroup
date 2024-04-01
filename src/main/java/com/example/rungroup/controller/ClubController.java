@@ -29,6 +29,13 @@ public class ClubController {
         return "clubs-list";
     }
 
+    @GetMapping("/clubs/{clubId}")
+    public String clubDetail(@PathVariable("clubId") Long clubId, Model model) {
+        ClubDTO clubDTO = clubService.findClubById(clubId);
+        model.addAttribute("club", clubDTO);
+        return "clubs-detail";
+    }
+
     @GetMapping("/clubs/new")
     public String createClubForm(Model model) {
         Club club = new Club();
@@ -64,6 +71,5 @@ public class ClubController {
         clubService.updateClub(club);
         return "redirect:/clubs";
     }
-
 
 }
