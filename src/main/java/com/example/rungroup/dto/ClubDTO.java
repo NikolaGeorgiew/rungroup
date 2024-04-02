@@ -1,7 +1,9 @@
 package com.example.rungroup.dto;
 
 import com.example.rungroup.models.UserEntity;
+import jakarta.persistence.Column;
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.Size;
 import lombok.Builder;
 import lombok.Data;
 
