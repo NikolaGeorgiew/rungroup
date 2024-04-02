@@ -1,5 +1,6 @@
 package com.example.rungroup.dto;
 
+import com.example.rungroup.models.UserEntity;
 import jakarta.validation.constraints.NotEmpty;
 import lombok.Builder;
 import lombok.Data;
@@ -18,6 +19,7 @@ public class ClubDTO {
     private String photoUrl;
     @NotEmpty(message = "Content should not be empty")
     private String content;
+    private UserEntity createdBy;
     private LocalDateTime createdOn;
     private LocalDateTime updatedOn;
     private List<EventDTO> events;
