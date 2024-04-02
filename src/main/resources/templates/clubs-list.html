@@ -11,6 +11,9 @@
     <section layout:fragment="body" class="py-5">
         <div class="container px-5 my-5">
             <div class="text-center mb-5">
+                <div tH:if="${param.success}" class="alert alert-success">
+                    You are registered successfull
+                </div>
                 <h1 class="fw-bolder">Runners Near You</h1>
                 <p class="lead fw-normal text-muted mb-0">Runners found in your area</p>
             </div>
